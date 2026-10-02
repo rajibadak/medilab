@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <title>EGRA Medilab Diagnosis | Advanced Diagnostics in Egra</title>
+  <meta name="description" content="EGRA Medilab Diagnosis — accurate testing, modern technology and a patient-first approach in Egra, Purba Medinipur." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+  <link rel="stylesheet" href="css/theme.css?v=19" />
+</head>
+<body>
+  <div class="scroll-progress" id="scrollProgress"></div>
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <div class="topbar-left">
+        <span class="dot-green">Trusted Diagnostic Care in Egra</span>
+        <span>Accurate Reports</span>
+        <span>Home Sample Collection</span>
+        <span>Patient Support</span>
+      </div>
+      <div class="topbar-right">
+        <span>
+          <i class="ri-phone-fill"></i>
+          Call Us: +91 98765 43210
+        </span>
+        <span>
+          <i class="ri-time-fill"></i>
+          Mon - Sat: 7:00 AM - 8:00 PM
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="#home">
+        <img src="images/logo.png" alt="EGRA Medilab Diagnosis Pvt. Ltd." />
+      </a>
+      <nav class="nav" id="nav">
+        <a class="active" href="#home">Home</a>
+        <a href="#services">Diagnostics</a>
+        <a href="#services">Services</a>
+        <a href="#packages">Health Packages</a>
+        <a href="#doctors">Doctors</a>
+        <a href="#why">About</a>
+        <a href="#contact">Contact</a>
+        <a class="btn btn-primary nav-book" href="#book">Book a Test</a>
+      </nav>
+      <div class="header-actions">
+        <button class="search-btn" id="searchToggle" aria-label="Search"><i class="ri-search-line"></i></button>
+        <a class="btn btn-primary" href="#book">Book a Test</a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Open menu"><i class="ri-menu-line"></i></button>
+      </div>
+    </div>
+    <form class="search-panel" id="searchPanel">
+      <input type="search" placeholder="Search tests, doctors, packages..." />
+    </form>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-slider" id="heroSlider">
+        <img class="hero-banner-img is-active" src="images/hero-1.jpg" alt="Radiology and CT imaging at EGRA Medilab" />
+        <img class="hero-banner-img" src="images/hero-2.jpg" alt="Pathology laboratory at EGRA Medilab" />
+        <img class="hero-banner-img" src="images/hero-3.jpg" alt="Doctor consultation at EGRA Medilab" />
+      </div>
+      <div class="hero-veil"></div>
+      <div class="container hero-content">
+        <div class="hero-copy-inner">
+          <div class="eyebrow">Trusted Diagnostic Care</div>
+          <h1>Advanced Diagnostics.<br>Clearer Answers.<br><em>Better Care.</em></h1>
+          <p class="hero-lead">Accurate testing, modern technology and a patient first approach for a healthier tomorrow.</p>
+          <div class="hero-ctas">
+            <a class="btn btn-primary" href="#book">Book a Test <i class="ri-arrow-right-line"></i></a>
+          </div>
+          <ul class="hero-points">
+            <li><i class="ri-shield-check-fill"></i> Quality-first reporting</li>
+            <li><i class="ri-flashlight-fill"></i> Fast digital reports</li>
+            <li><i class="ri-home-heart-fill"></i> Home sample collection</li>
+          </ul>
+        </div>
+      </div>
+      <div class="hero-slider-ui">
+        <button type="button" class="hero-arrow" id="heroPrev" aria-label="Previous banner"><i class="ri-arrow-left-s-line"></i></button>
+        <div class="hero-dots" id="heroDots"></div>
+        <button type="button" class="hero-arrow" id="heroNext" aria-label="Next banner"><i class="ri-arrow-right-s-line"></i></button>
+      </div>
+    </section>
+
+    <div class="container quick-wrap">
+      <div class="quick-bar">
+        <a class="quick-item" href="#contact">
+          <span class="qi"><i class="ri-customer-service-2-fill"></i></span>
+          <span><h3>24/7 Patient Support</h3></span>
+          <span class="chev"><i class="ri-arrow-right-s-line"></i></span>
+        </a>
+        <a class="quick-item" href="#home-collection">
+          <span class="qi"><i class="ri-home-heart-fill"></i></span>
+          <span><h3>Home Sample Collection</h3><p>Convenient &amp; Safe</p></span>
+          <span class="chev"><i class="ri-arrow-right-s-line"></i></span>
+        </a>
+        <a class="quick-item" href="#reports">
+          <span class="qi"><i class="ri-file-download-fill"></i></span>
+          <span><h3>Download Reports</h3><p>Quick &amp; Secure</p></span>
+          <span class="chev"><i class="ri-arrow-right-s-line"></i></span>
+        </a>
+        <a class="quick-item" href="#doctors">
+          <span class="qi"><i class="ri-stethoscope-fill"></i></span>
+          <span><h3>Find a Doctor</h3><p>Consult Our Specialists</p></span>
+          <span class="chev"><i class="ri-arrow-right-s-line"></i></span>
+        </a>
+      </div>
+    </div>
+
+    <section class="stats-strip" aria-label="Key facts">
+      <div class="container stats-row">
+        <div class="stat-item"><strong data-count="100">100+</strong><span>Diagnostic Tests</span></div>
+        <div class="stat-item"><strong data-count="15">15+</strong><span>Specialist Doctors</span></div>
+        <div class="stat-item"><strong data-count="10">10k+</strong><span>Reports Delivered</span></div>
+        <div class="stat-item"><strong>24/7</strong><span>Patient Support</span></div>
+      </div>
+    </section>
+
+    <section class="section" id="services">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Our Services</div>
+            <h2>Comprehensive Diagnostic Services</h2>
+          </div>
+          <a class="link-more" href="#services">View All Services →</a>
+        </div>
+        <div class="service-grid">
+          <article class="service-card reveal">
+            <div class="media"><img src="images/service-pathology.jpg" alt="Pathology laboratory samples" /></div>
+            <h3>Pathology</h3>
+            <p>Wide range of blood, urine and other diagnostic tests.</p>
+            <a class="link-more" href="#book">Explore →</a>
+          </article>
+          <article class="service-card reveal">
+            <div class="media"><img src="images/service-radiology.jpg" alt="Radiology imaging scanner" /></div>
+            <h3>Radiology</h3>
+            <p>X-Ray, Ultrasound, CT Scan and advanced imaging.</p>
+            <a class="link-more" href="#book">Explore →</a>
+          </article>
+          <article class="service-card reveal">
+            <div class="media"><img src="images/service-cardiology.jpg" alt="Cardiology heart model" style="object-position: 50% 70%;" /></div>
+            <h3>Cardiology</h3>
+            <p>ECG, Echo and specialized cardiac diagnostics.</p>
+            <a class="link-more" href="#book">Explore →</a>
+          </article>
+          <article class="service-card reveal">
+            <div class="media"><img src="images/service-neurology.jpg" alt="Neurology brain imaging" /></div>
+            <h3>Neurology</h3>
+            <p>EEG, neuro diagnostics and consultations.</p>
+            <a class="link-more" href="#book">Explore →</a>
+          </article>
+          <article class="service-card reveal">
+            <div class="media"><img src="images/service-gastro.jpg" alt="Gastroenterology digestive system" /></div>
+            <h3>Gastroenterology</h3>
+            <p>Specialized tests for digestive health.</p>
+            <a class="link-more" href="#book">Explore →</a>
+          </article>
+          <article class="service-card reveal">
+            <div class="media"><img src="images/service-general.jpg" alt="General diagnostics consultation" /></div>
+            <h3>General Diagnostics</h3>
+            <p>Routine and preventive health checkups.</p>
+            <a class="link-more" href="#book">Explore →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="doctors">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Our Doctors</div>
+            <h2>Meet Our Experienced Doctors</h2>
+            <p>Consult with our team of qualified and experienced specialists for complete healthcare support.</p>
+          </div>
+          <div style="display:flex;align-items:center;gap:14px;">
+            <a class="link-more" href="#doctors">View All Doctors →</a>
+            <div class="slider-btns">
+              <button class="icon-btn" id="docPrev" aria-label="Previous doctors"><i class="ri-arrow-left-s-line"></i></button>
+              <button class="icon-btn" id="docNext" aria-label="Next doctors"><i class="ri-arrow-right-s-line"></i></button>
+            </div>
+          </div>
+        </div>
+        <div class="doctors-wrap">
+          <div class="doctor-track" id="doctorTrack">
+            <article class="doctor-card reveal">
+              <div class="avatar"><img src="images/doctor-1.jpg" alt="Dr. Arindam Ghosh" /></div>
+              <h3>Dr. Arindam Ghosh</h3>
+              <div class="cred">MBBS, MD (Medicine)</div>
+              <div class="meta"><span class="dot"></span> General Medicine</div>
+              <div class="meta check"><i class="ri-checkbox-circle-fill"></i> Available Today</div>
+              <a class="btn btn-primary btn-sm" href="#book">Book Appointment →</a>
+            </article>
+            <article class="doctor-card reveal">
+              <div class="avatar"><img src="images/doctor-2.jpg" alt="Dr. Priyanka Sen" /></div>
+              <h3>Dr. Priyanka Sen</h3>
+              <div class="cred">MBBS, MD (Medicine)</div>
+              <div class="meta"><span class="dot"></span> General Medicine</div>
+              <div class="meta check"><i class="ri-checkbox-circle-fill"></i> Available Today</div>
+              <a class="btn btn-primary btn-sm" href="#book">Book Appointment →</a>
+            </article>
+            <article class="doctor-card reveal">
+              <div class="avatar"><img src="images/doctor-3.jpg" alt="Dr. Suman Das" /></div>
+              <h3>Dr. Suman Das</h3>
+              <div class="cred">DM (Cardiology)</div>
+              <div class="meta"><span class="dot"></span> Cardiology</div>
+              <div class="meta check"><i class="ri-checkbox-circle-fill"></i> Available Today</div>
+              <a class="btn btn-primary btn-sm" href="#book">Book Appointment →</a>
+            </article>
+            <article class="doctor-card reveal">
+              <div class="avatar"><img src="images/doctor-4.jpg" alt="Dr. Rituparna Pal" /></div>
+              <h3>Dr. Rituparna Pal</h3>
+              <div class="cred">MD (Radiology)</div>
+              <div class="meta"><span class="dot"></span> Radiology</div>
+              <div class="meta check"><i class="ri-checkbox-circle-fill"></i> Available Today</div>
+              <a class="btn btn-primary btn-sm" href="#book">Book Appointment →</a>
+            </article>
+            <article class="doctor-card reveal">
+              <div class="avatar"><img src="images/doctor-5.jpg" alt="Dr. Abhishek Roy" /></div>
+              <h3>Dr. Abhishek Roy</h3>
+              <div class="cred">MD (Neurology)</div>
+              <div class="meta"><span class="dot"></span> Neurology</div>
+              <div class="meta check"><i class="ri-checkbox-circle-fill"></i> Available Today</div>
+              <a class="btn btn-primary btn-sm" href="#book">Book Appointment →</a>
+            </article>
+            <article class="doctor-card reveal">
+              <div class="avatar"><img src="images/doctor-6.jpg" alt="Dr. Moumita Dey" /></div>
+              <h3>Dr. Moumita Dey</h3>
+              <div class="cred">DNB (Gastroenterology)</div>
+              <div class="meta"><span class="dot"></span> Gastroenterology</div>
+              <div class="meta check"><i class="ri-checkbox-circle-fill"></i> Available Today</div>
+              <a class="btn btn-primary btn-sm" href="#book">Book Appointment →</a>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="packages">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Health Packages</div>
+            <h2>Choose a Health Package for a Healthier You</h2>
+          </div>
+          <a class="link-more" href="#packages">View All Packages →</a>
+        </div>
+        <div class="package-grid">
+          <article class="pkg-card featured">
+            <div class="pkg-media">
+              <img src="images/pkg-fullbody.jpg" alt="Family health checkup" />
+              <span class="pkg-tag">Most Chosen</span>
+            </div>
+            <div class="pkg-body">
+              <span class="pkg-icon green"><i class="ri-heart-pulse-fill"></i></span>
+              <h3>Full Body Health Checkup</h3>
+              <ul>
+                <li><i class="ri-checkbox-circle-fill"></i> Complete health assessment</li>
+                <li><i class="ri-checkbox-circle-fill"></i> Early detection of health risks</li>
+                <li><i class="ri-checkbox-circle-fill"></i> Ideal for all age groups</li>
+              </ul>
+              <a class="btn btn-primary" href="#book">Book Now <i class="ri-arrow-right-line"></i></a>
+            </div>
+          </article>
+          <article class="pkg-card">
+            <div class="pkg-media">
+              <img src="images/pkg-diabetes.jpg" alt="Blood glucose meter" />
+            </div>
+            <div class="pkg-body">
+              <span class="pkg-icon teal"><i class="ri-dropper-fill"></i></span>
+              <h3>Diabetes Care Package</h3>
+              <ul>
+                <li><i class="ri-checkbox-circle-fill"></i> Blood sugar monitoring</li>
+                <li><i class="ri-checkbox-circle-fill"></i> HbA1c and other key tests</li>
+                <li><i class="ri-checkbox-circle-fill"></i> Consultation with specialist</li>
+              </ul>
+              <a class="btn btn-primary" href="#book">Book Now <i class="ri-arrow-right-line"></i></a>
+            </div>
+          </article>
+          <article class="pkg-card">
+            <div class="pkg-media">
+              <img src="images/pkg-heart.jpg" alt="Heart health" />
+            </div>
+            <div class="pkg-body">
+              <span class="pkg-icon red"><i class="ri-hearts-fill"></i></span>
+              <h3>Heart Health Package</h3>
+              <ul>
+                <li><i class="ri-checkbox-circle-fill"></i> Cardiac risk assessment</li>
+                <li><i class="ri-checkbox-circle-fill"></i> ECG, Lipid profile and more</li>
+                <li><i class="ri-checkbox-circle-fill"></i> Expert consultation</li>
+              </ul>
+              <a class="btn btn-primary" href="#book">Book Now <i class="ri-arrow-right-line"></i></a>
+            </div>
+          </article>
+          <article class="pkg-card">
+            <div class="pkg-media">
+              <img src="images/pkg-women.jpg" alt="Women's health" />
+            </div>
+            <div class="pkg-body">
+              <span class="pkg-icon pink"><i class="ri-women-line"></i></span>
+              <h3>Women’s Health Package</h3>
+              <ul>
+                <li><i class="ri-checkbox-circle-fill"></i> Essential tests for women</li>
+                <li><i class="ri-checkbox-circle-fill"></i> Hormonal and bone health</li>
+                <li><i class="ri-checkbox-circle-fill"></i> Consultation with specialist</li>
+              </ul>
+              <a class="btn btn-primary" href="#book">Book Now <i class="ri-arrow-right-line"></i></a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="why" id="why">
+      <div class="container">
+        <div class="why-head">
+          <div class="eyebrow light">Why Choose EGRA</div>
+          <h2>Precision. Care. Trust.</h2>
+          <p>We are committed to providing accurate diagnostic services with advanced technology and a patient first approach.</p>
+        </div>
+        <div class="why-points">
+          <article class="why-card">
+            <span class="why-num">01</span>
+            <div class="why-ico"><i class="ri-checkbox-circle-fill"></i></div>
+            <h3>Accurate Testing</h3>
+            <p>Reliable and precise reports you can trust, every time.</p>
+          </article>
+          <article class="why-card">
+            <span class="why-num">02</span>
+            <div class="why-ico"><i class="ri-microscope-fill"></i></div>
+            <h3>Advanced Technology</h3>
+            <p>Modern diagnostic equipment for clearer, faster results.</p>
+          </article>
+          <article class="why-card">
+            <span class="why-num">03</span>
+            <div class="why-ico"><i class="ri-user-star-fill"></i></div>
+            <h3>Experienced Professionals</h3>
+            <p>Skilled doctors and laboratory experts by your side.</p>
+          </article>
+          <article class="why-card">
+            <span class="why-num">04</span>
+            <div class="why-ico"><i class="ri-heart-add-fill"></i></div>
+            <h3>Patient First</h3>
+            <p>Your health and convenience always come first.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="home-collection">
+      <div class="container home-col">
+        <img src="images/home-collection.jpg" alt="Home sample collection by a trained professional" />
+        <div>
+          <div class="eyebrow">Home Sample Collection</div>
+          <h2 class="display">Your health checkup, without leaving home.</h2>
+          <p class="body-copy">Our trained professionals collect samples from yours with complete safety and hygiene.</p>
+          <ul class="feature-list">
+            <li><span class="fi-round"><i class="ri-user-star-fill"></i></span> Trained Professionals</li>
+            <li><span class="fi-round"><i class="ri-shield-check-fill"></i></span> Safe &amp; Hygienic Process</li>
+            <li><span class="fi-round"><i class="ri-time-fill"></i></span> Timely Report Delivery</li>
+            <li><span class="fi-round"><i class="ri-map-pin-2-fill"></i></span> Available Across Egra &amp; Nearby Areas</li>
+          </ul>
+          <a class="btn btn-primary" href="#book">Schedule Home Collection →</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="reports">
+      <div class="container reports">
+        <div>
+          <div class="eyebrow">Digital Reports</div>
+          <h2 class="display">Your Reports.<br>Always Within Reach.</h2>
+          <p class="body-copy" style="margin-bottom:18px;">Access your diagnostic reports online quickly and securely. View, download or share your reports anytime, anywhere.</p>
+          <div class="hero-ctas">
+            <a class="btn btn-primary" href="#book">Download Report →</a>
+            <a class="btn btn-outline" href="#book">Patient Login</a>
+          </div>
+        </div>
+        <img class="reports-photo" src="images/reports-devices.jpg" alt="Patient reports on laptop and phone" />
+        <ul class="side-features">
+          <li><span class="fi-round"><i class="ri-lock-2-fill"></i></span> Secure &amp; Encrypted</li>
+          <li><span class="fi-round"><i class="ri-flashlight-fill"></i></span> Quick Access</li>
+          <li><span class="fi-round"><i class="ri-download-2-fill"></i></span> Download or Share</li>
+          <li><span class="fi-round"><i class="ri-smartphone-fill"></i></span> Available on Any Device</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" id="testimonials">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Patient Testimonials</div>
+            <h2>What Our Patients Say</h2>
+          </div>
+          <div style="display:flex;align-items:center;gap:14px;">
+            <a class="link-more" href="#testimonials">View All Reviews →</a>
+            <div class="slider-btns">
+              <button class="icon-btn" id="revPrev" aria-label="Previous reviews"><i class="ri-arrow-left-s-line"></i></button>
+              <button class="icon-btn" id="revNext" aria-label="Next reviews"><i class="ri-arrow-right-s-line"></i></button>
+            </div>
+          </div>
+        </div>
+        <div class="testi-wrap">
+          <div class="testi-track" id="testiTrack">
+            <article class="testi-card">
+              <i class="ri-double-quotes-l quote-mark"></i>
+              <p>“Very good service and accurate reports. Staff are polite and helpful.”</p>
+              <div class="stars"><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i></div>
+              <div class="who-row">
+                <img src="images/testimonial-1.jpg" alt="Suman Das" />
+                <div class="who">Suman Das <span>Egra</span></div>
+              </div>
+            </article>
+            <article class="testi-card">
+              <i class="ri-double-quotes-l quote-mark"></i>
+              <p>“Home collection service is very convenient. Received reports on time.”</p>
+              <div class="stars"><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i></div>
+              <div class="who-row">
+                <img src="images/testimonial-2.jpg" alt="Priyanka Maity" />
+                <div class="who">Priyanka Maity <span>Egra</span></div>
+              </div>
+            </article>
+            <article class="testi-card">
+              <i class="ri-double-quotes-l quote-mark"></i>
+              <p>“Clean and well maintained diagnostic centre with modern equipment.”</p>
+              <div class="stars"><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i></div>
+              <div class="who-row">
+                <img src="images/testimonial-3.jpg" alt="Rajib Patra" />
+                <div class="who">Rajib Patra <span>Egra</span></div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="facilities">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Our Facilities</div>
+            <h2>A Modern Diagnostic Centre for Better Care</h2>
+          </div>
+          <a class="link-more" href="#facilities">View All Photos →</a>
+        </div>
+        <div class="facility-grid">
+          <article class="facility-card reveal"><div class="media"><img src="images/facility-reception.jpg" alt="Reception area" /></div><h3>Reception Area</h3></article>
+          <article class="facility-card reveal"><div class="media"><img src="images/facility-pathology.jpg" alt="Pathology lab" /></div><h3>Pathology Lab</h3></article>
+          <article class="facility-card reveal"><div class="media"><img src="images/facility-radiology.jpg" alt="Radiology department" /></div><h3>Radiology Department</h3></article>
+          <article class="facility-card reveal"><div class="media"><img src="images/facility-patient.jpg" alt="Patient care" /></div><h3>Patient Care</h3></article>
+          <article class="facility-card reveal"><div class="media"><img src="images/facility-building.jpg" alt="Modern infrastructure" /></div><h3>Modern Infrastructure</h3></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="insights">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Health Tips &amp; Articles</div>
+            <h2>Latest Health Insights</h2>
+          </div>
+          <a class="link-more" href="#insights">View All Articles →</a>
+        </div>
+        <div class="blog-grid">
+          <article class="blog-card">
+            <div class="blog-media"><img src="images/blog-checkup.jpg" alt="Healthy food for regular checkups" /></div>
+            <div class="blog-body">
+              <div class="blog-meta"><i class="ri-calendar-line"></i> 12 Sep 2025 <span>Prevention</span></div>
+              <h3>Why Regular Health Checkups Are Important</h3>
+              <p>Early screening helps detect risks before they become serious health concerns.</p>
+              <a class="link-more" href="#insights">Read More <i class="ri-arrow-right-line"></i></a>
+            </div>
+          </article>
+          <article class="blog-card">
+            <div class="blog-media"><img src="images/blog-diabetes.jpg" alt="Diabetes monitoring" /></div>
+            <div class="blog-body">
+              <div class="blog-meta"><i class="ri-calendar-line"></i> 05 Sep 2025 <span>Wellness</span></div>
+              <h3>Understanding Diabetes and How to Manage It</h3>
+              <p>Simple tests and daily habits that keep blood sugar under better control.</p>
+              <a class="link-more" href="#insights">Read More <i class="ri-arrow-right-line"></i></a>
+            </div>
+          </article>
+          <article class="blog-card">
+            <div class="blog-media"><img src="images/blog-heart.jpg" alt="Heart health" /></div>
+            <div class="blog-body">
+              <div class="blog-meta"><i class="ri-calendar-line"></i> 28 Aug 2025 <span>Cardiology</span></div>
+              <h3>Tips for a Healthy Heart</h3>
+              <p>Practical ways to protect your heart with diet, movement and timely tests.</p>
+              <a class="link-more" href="#insights">Read More <i class="ri-arrow-right-line"></i></a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta" id="book">
+      <div class="container cta-inner">
+        <div>
+          <h2>Take the Next Step Toward Better Health</h2>
+          <p>Book a test, schedule a home collection or consult our specialists today.</p>
+        </div>
+        <div class="cta-actions">
+          <button class="btn btn-white" data-open="bookModal">Book a Test <i class="ri-arrow-right-line"></i></button>
+          <a class="btn btn-outline-light" href="tel:+919876543210"><i class="ri-phone-fill"></i> Call Us Now</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" id="contact">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a class="logo" href="#home">
+          <img src="images/logo.png" alt="EGRA Medilab Diagnosis Pvt. Ltd." />
+        </a>
+        <p>Trusted diagnostic care in Egra with accurate reports, home collection and specialist support.</p>
+        <div class="socials">
+          <a href="#" aria-label="Facebook"><i class="ri-facebook-fill"></i></a>
+          <a href="#" aria-label="Instagram"><i class="ri-instagram-line"></i></a>
+          <a href="#" aria-label="YouTube"><i class="ri-youtube-fill"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="ri-linkedin-fill"></i></a>
+        </div>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#packages">Health Packages</a></li>
+          <li><a href="#doctors">Doctors</a></li>
+          <li><a href="#why">About Us</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul class="contact-list">
+          <li><i class="ri-map-pin-2-fill"></i> Egra, Purba Medinipur, West Bengal</li>
+          <li><i class="ri-phone-fill"></i> +91 98765 43210</li>
+          <li><i class="ri-mail-fill"></i> info@egramedilabdiagnosis.com</li>
+          <li><i class="ri-time-fill"></i> Mon - Sat: 7:00 AM - 8:00 PM</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Health Updates</h4>
+        <p>Get wellness tips and report alerts in your inbox.</p>
+        <form class="subscribe" id="subscribeForm">
+          <input type="email" required placeholder="Enter your email" />
+          <button type="submit" aria-label="Subscribe"><i class="ri-send-plane-fill"></i></button>
+        </form>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container legal">
+        <div>© 2025 EGRA Medilab Diagnosis. All Rights Reserved.</div>
+        <div class="legal-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms &amp; Conditions</a>
+          <a href="#">Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast" role="status"></div>
+  <div class="modal" id="bookModal">
+    <div class="modal-card">
+      <button class="modal-close" data-close>&times;</button>
+      <h3>Book a Test</h3>
+      <p>Share your details and our team will confirm your booking.</p>
+      <form class="form" id="bookForm">
+        <input name="name" required placeholder="Full name" />
+        <input name="phone" required placeholder="Phone number" />
+        <select name="type" required>
+          <option value="">Select service</option>
+          <option>Pathology Test</option>
+          <option>Radiology Scan</option>
+          <option>Health Package</option>
+          <option>Home Sample Collection</option>
+          <option>Doctor Appointment</option>
+        </select>
+        <textarea name="note" rows="3" placeholder="Test name or additional note"></textarea>
+        <button class="btn btn-primary" type="submit">Submit Request</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="js/main.js?v=5"></script>
+</body>
+</html>
