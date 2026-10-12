@@ -1,3 +1,5 @@
+document.getElementById("welcomeModal")?.remove();
+
 const nav = document.getElementById("nav");
 const header = document.querySelector(".site-header");
 const progress = document.getElementById("scrollProgress");
@@ -18,9 +20,121 @@ function showToast(message) {
   setTimeout(() => toast.classList.remove("show"), 2800);
 }
 
+const BOOK_COPY = {
+  appointment: {
+    title: "Book an Appointment",
+    lead: "Choose a doctor from the list. This form does not ask for a test.",
+    note: "Reason for the visit",
+    submit: "Request Appointment",
+    toast: "Appointment request received. The desk will confirm the doctor and time."
+  },
+  doctor: {
+    title: "Book an Appointment",
+    lead: "This doctor is selected. You can pick a different doctor from the list.",
+    note: "Symptoms or reports you want to discuss",
+    submit: "Request Appointment",
+    toast: "Appointment request received. The desk will confirm this doctor’s available time."
+  },
+  test: {
+    title: "Book a Test",
+    lead: "Name the test and a phone number. The desk confirms preparation and time.",
+    note: "Prescription or anything else the desk should know",
+    submit: "Submit Test Request",
+    toast: "Test request received. The desk will confirm preparation and time."
+  },
+  collection: {
+    title: "Home Sample Collection",
+    lead: "Share the address and the test. A collector confirms the slot.",
+    note: "Gate code, floor, or a landmark",
+    submit: "Request Home Collection",
+    toast: "Home collection request received. The desk will confirm the address and time."
+  },
+  report: {
+    title: "Request a Report",
+    lead: "This is only for a report that is already done. It does not book a new test.",
+    note: "Bill number, if you have it",
+    submit: "Request Report",
+    toast: "Report request received. The desk will verify the visit before sending the file."
+  }
+};
+
+function bookingFrom(link) {
+  const page = document.body.dataset.page || "";
+  const explicit = link.dataset.book;
+  const card = link.closest(".doctor-card");
+  let kind = explicit || "";
+  let doctor = link.dataset.doctor || "";
+  let dept = link.dataset.dept || "";
+  let subject = link.dataset.subject || "";
+
+  if (!kind && card) kind = "doctor";
+  if (!kind && page.startsWith("doctor-")) kind = "doctor";
+  if (!kind && page.startsWith("service-")) kind = "test";
+  if (!kind && page === "home-collection") kind = "collection";
+  if (!kind && page === "reports") kind = "report";
+  if (!kind && /appointment/i.test(link.textContent)) kind = "appointment";
+  if (!kind) kind = "test";
+
+  if (kind === "doctor" && !doctor) {
+    if (card) {
+      doctor = card.querySelector("h3")?.textContent.trim() || "";
+      dept = card.querySelector(".meta")?.textContent.trim() || "";
+    } else {
+      doctor = document.querySelector(".page-hero h1")?.textContent.trim() || "";
+      const line = document.querySelector(".page-hero p")?.textContent || "";
+      dept = line.split("·").pop().trim();
+    }
+  }
+  if (kind === "test" && !subject && page.startsWith("service-")) {
+    subject = document.querySelector(".page-hero h1")?.textContent.trim() || "";
+  }
+  return { kind, doctor, dept, subject };
+}
+
+function applyBookFields(info) {
+  document.querySelectorAll("#bookForm [data-show]").forEach((field) => {
+    const on = field.getAttribute("data-show").split(" ").includes(info.kind);
+    field.style.display = on ? "grid" : "none";
+    field.querySelectorAll("input, select, textarea").forEach((input) => {
+      input.disabled = !on;
+      input.required = on;
+    });
+  });
+  const subjectLabel = document.getElementById("subjectLabel");
+  const subject = document.getElementById("bookSubject");
+  if (subjectLabel) {
+    if (info.kind === "report") subjectLabel.textContent = "Test name on the report";
+    else if (info.kind === "collection") subjectLabel.textContent = "Test to collect";
+    else subjectLabel.textContent = "Test name";
+  }
+  if (subject) subject.readOnly = false;
+  const doctorSelect = document.getElementById("bookDoctorChoice");
+  if (doctorSelect && (info.kind === "appointment" || info.kind === "doctor")) {
+    const wanted = (info.doctor || "").trim();
+    const match = [...doctorSelect.options].find((option) => option.value && (option.value === wanted || option.value.startsWith(wanted)));
+    doctorSelect.value = match ? match.value : "";
+  }
+}
+
+function openBook(link) {
+  const info = bookingFrom(link);
+  const copy = BOOK_COPY[info.kind] || BOOK_COPY.test;
+  const form = document.getElementById("bookForm");
+  form?.reset();
+  document.getElementById("bookKind").value = info.kind;
+  document.getElementById("bookTitle").textContent = copy.title;
+  document.getElementById("bookLead").textContent = copy.lead;
+  document.getElementById("bookNote").placeholder = copy.note;
+  document.getElementById("bookSubmit").textContent = copy.submit;
+  document.getElementById("bookSubject").value = info.subject;
+  applyBookFields(info);
+  document.getElementById("bookModal").classList.add("open");
+}
+
 document.querySelectorAll("[data-open]").forEach((btn) => {
   btn.addEventListener("click", () => {
-    document.getElementById(btn.dataset.open).classList.add("open");
+    if (btn.dataset.open === "bookModal") openBook(btn);
+    else document.getElementById(btn.dataset.open)?.classList.add("open");
   });
 });
 document.querySelectorAll("[data-close]").forEach((btn) => {
@@ -33,18 +147,39 @@ document.querySelectorAll(".modal").forEach((modal) => {
 });
 
 document.addEventListener("click", (e) => {
-  const bookLink = e.target.closest('a[href="#book"]');
+  const bookLink = e.target.closest(".js-book, a[href='#book']");
   if (!bookLink) return;
   e.preventDefault();
-  document.getElementById("bookModal").classList.add("open");
+  openBook(bookLink);
   nav?.classList.remove("open");
 });
 
-document.getElementById("bookForm")?.addEventListener("submit", (e) => {
+document.querySelectorAll(".book-form").forEach((form) => {
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const kind = form.querySelector("#bookKind")?.value;
+    const toastText = BOOK_COPY[kind]?.toast || "Thank you. Our team will confirm your booking shortly.";
+    form.reset();
+    document.getElementById("bookModal")?.classList.remove("open");
+    showToast(toastText);
+  });
+});
+
+document.getElementById("searchPanel")?.addEventListener("submit", (e) => {
   e.preventDefault();
-  e.target.reset();
-  document.getElementById("bookModal").classList.remove("open");
-  showToast("Thank you. Our team will confirm your booking shortly.");
+  const query = (document.getElementById("siteSearch")?.value || "").trim().toLowerCase();
+  if (!query) return;
+  const pages = window.SITE_PAGES || [];
+  const hit = pages.find((item) => `${item.title} ${item.keys}`.toLowerCase().includes(query));
+  if (!hit) {
+    showToast("No matching page. Try a test or doctor name.");
+    return;
+  }
+  window.location.href = hit.href;
+});
+
+nav?.querySelectorAll("a").forEach((link) => {
+  link.addEventListener("click", () => nav.classList.remove("open"));
 });
 
 document.getElementById("subscribeForm")?.addEventListener("submit", (e) => {

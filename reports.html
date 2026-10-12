@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Download Reports | EGRA Medilab Diagnosis</title>
+  <meta name="description" content="How to receive and download diagnostic reports from EGRA Medilab Diagnosis." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+  <link rel="stylesheet" href="css/theme.css?v=20261012" />
+</head>
+<body data-page="reports" data-nav="">
+  <div id="site-header"></div>
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a><span>/</span><span>Download Reports</span></nav>
+        <h1>Your reports, ready to open</h1>
+        <p>Routine reports are shared digitally so you can view them on a phone or computer and forward them to your doctor.</p>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container detail-grid">
+        <article class="prose">
+          <img class="detail-photo" src="images/reports-devices.jpg" alt="Reports on a laptop and phone" />
+          <h2>How to get a report</h2>
+          <ul class="check-list"><li><i class="ri-checkbox-circle-fill"></i> Keep the phone number you used at booking. The report alert goes there.</li><li><i class="ri-checkbox-circle-fill"></i> At the centre, the desk can resend a link or print a copy after an identity check.</li><li><i class="ri-checkbox-circle-fill"></i> Home-collection reports use the same process as centre visits.</li><li><i class="ri-checkbox-circle-fill"></i> For another person’s report, the desk needs that patient’s permission.</li></ul>
+          <p>There is no separate public password on this website yet. Use the request form or call +91 98765 43210 and quote the patient name and bill or visit date. The team sends the file after confirming who is asking.</p>
+          <p class="note">Do not post report files in open social chats. They contain personal health information.</p>
+        </article>
+                <aside class="detail-side">
+          <div class="side-card">
+            <h3>Request a report</h3>
+            <p>Send the patient name, phone number used at the visit, and the test date.</p>
+            <a class="btn btn-primary js-book" data-book="report" href="#book">Request Report</a>
+            <a class="btn btn-outline" href="tel:+919876543210">Call +91 98765 43210</a>
+          </div>
+          <div class="side-card">
+            <h3>Related pages</h3>
+            <div class="side-links"><a href="contact.html">Contact desk <i class="ri-arrow-right-s-line"></i></a><a href="privacy.html">Privacy policy <i class="ri-arrow-right-s-line"></i></a><a href="home-collection.html">Home collection <i class="ri-arrow-right-s-line"></i></a></div>
+          </div>
+        </aside>
+      </div>
+    </section>
+    <section class="section alt">
+      <div class="container" style="max-width:720px;">
+        <h2 class="display">Ask the desk to resend a report</h2>
+        <form class="form book-form">
+          <input name="name" required placeholder="Patient name" />
+          <input name="phone" required placeholder="Phone number used at the visit" />
+          <input name="subject" required placeholder="Test name on the report" />
+          <input name="visitDate" type="date" required aria-label="Date of the visit" />
+          <textarea name="note" rows="3" placeholder="Bill number, if you have it"></textarea>
+          <button class="btn btn-primary" type="submit">Request Report</button>
+        </form>
+      </div>
+    </section>
+  </main>
+  <div id="site-footer"></div>
+  <script src="js/layout.js?v=20261012h"></script>
+  <script src="js/main.js?v=20261012h"></script>
+</body>
+</html>
