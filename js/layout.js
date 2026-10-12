@@ -4,6 +4,24 @@ function navClass(id) {
   return pageNav === id ? "active" : "";
 }
 
+function assetPrefix() {
+  let path = location.pathname;
+  if (path.endsWith("/index.html")) path = path.slice(0, -"index.html".length);
+  if (!path.endsWith("/")) path += "/";
+  const atSiteRoot = path === "/" || /\/medilab\/$/.test(path);
+  return atSiteRoot ? "" : "../";
+}
+
+function pageHref(file) {
+  const prefix = assetPrefix();
+  if (!file || file === "index.html" || file === "index/" || file === "./") return prefix || "./";
+  let clean = file;
+  if (clean.endsWith(".html")) clean = clean.slice(0, -5);
+  if (!clean.endsWith("/")) clean += "/";
+  return prefix + clean;
+}
+window.pageHref = pageHref;
+
 const headerMount = document.getElementById("site-header");
 if (headerMount) {
   headerMount.innerHTML = `
@@ -24,16 +42,16 @@ if (headerMount) {
   </div>
   <header class="site-header">
     <div class="container header-inner">
-      <a class="logo" href="index.html">
-        <img src="images/logo.png" alt="EGRA Medilab Diagnosis Pvt. Ltd." />
+      <a class="logo" href="${pageHref('index.html')}">
+        <img src="${assetPrefix()}images/logo.png" alt="EGRA Medilab Diagnosis Pvt. Ltd." />
       </a>
       <nav class="nav" id="nav">
-        <a class="${navClass("home")}" href="index.html">Home</a>
-        <a class="${navClass("diagnostics")}" href="diagnostics.html">Diagnostics</a>
-        <a class="${navClass("services")}" href="services.html">Services</a>
-        <a class="${navClass("doctors")}" href="doctors.html">Doctors</a>
-        <a class="${navClass("about")}" href="about.html">About</a>
-        <a class="${navClass("contact")}" href="contact.html">Contact</a>
+        <a class="${navClass("home")}" href="${pageHref('index.html')}">Home</a>
+        <a class="${navClass("diagnostics")}" href="${pageHref('diagnostics.html')}">Diagnostics</a>
+        <a class="${navClass("services")}" href="${pageHref('services.html')}">Services</a>
+        <a class="${navClass("doctors")}" href="${pageHref('doctors.html')}">Doctors</a>
+        <a class="${navClass("about")}" href="${pageHref('about.html')}">About</a>
+        <a class="${navClass("contact")}" href="${pageHref('contact.html')}">Contact</a>
         <a class="btn btn-primary nav-book js-book" data-book="appointment" href="#book">Book Appointment</a>
       </nav>
       <div class="header-actions">
@@ -54,8 +72,8 @@ if (footerMount) {
   <footer class="footer" id="contact">
     <div class="container footer-grid">
       <div class="footer-brand">
-        <a class="logo" href="index.html">
-          <img src="images/logo.png" alt="EGRA Medilab Diagnosis Pvt. Ltd." />
+        <a class="logo" href="${pageHref('index.html')}">
+          <img src="${assetPrefix()}images/logo.png" alt="EGRA Medilab Diagnosis Pvt. Ltd." />
         </a>
         <p>Trusted diagnostic care in Egra with accurate reports, home collection and specialist support.</p>
         <div class="socials">
@@ -68,21 +86,21 @@ if (footerMount) {
       <div>
         <h4>Quick Links</h4>
         <ul class="footer-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="doctors.html">Doctors</a></li>
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="${pageHref('index.html')}">Home</a></li>
+          <li><a href="${pageHref('services.html')}">Services</a></li>
+          <li><a href="${pageHref('doctors.html')}">Doctors</a></li>
+          <li><a href="${pageHref('about.html')}">About Us</a></li>
+          <li><a href="${pageHref('contact.html')}">Contact</a></li>
         </ul>
       </div>
       <div>
         <h4>Patient Care</h4>
         <ul class="footer-links">
-          <li><a href="home-collection.html">Home Collection</a></li>
-          <li><a href="reports.html">Download Reports</a></li>
-          <li><a href="facilities.html">Facilities</a></li>
-          <li><a href="insights.html">Health Insights</a></li>
-          <li><a href="testimonials.html">Patient Stories</a></li>
+          <li><a href="${pageHref('home-collection.html')}">Home Collection</a></li>
+          <li><a href="${pageHref('reports.html')}">Download Reports</a></li>
+          <li><a href="${pageHref('facilities.html')}">Facilities</a></li>
+          <li><a href="${pageHref('insights.html')}">Health Insights</a></li>
+          <li><a href="${pageHref('testimonials.html')}">Patient Stories</a></li>
         </ul>
       </div>
       <div>
@@ -103,9 +121,9 @@ if (footerMount) {
       <div class="container legal">
         <div>© 2025 EGRA Medilab Diagnosis. All Rights Reserved.</div>
         <div class="legal-links">
-          <a href="privacy.html">Privacy Policy</a>
-          <a href="terms.html">Terms &amp; Conditions</a>
-          <a href="sitemap.html">Sitemap</a>
+          <a href="${pageHref('privacy.html')}">Privacy Policy</a>
+          <a href="${pageHref('terms.html')}">Terms &amp; Conditions</a>
+          <a href="${pageHref('sitemap.html')}">Sitemap</a>
         </div>
       </div>
     </div>

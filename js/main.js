@@ -175,7 +175,7 @@ document.getElementById("searchPanel")?.addEventListener("submit", (e) => {
     showToast("No matching page. Try a test or doctor name.");
     return;
   }
-  window.location.href = hit.href;
+  window.location.href = window.pageHref(hit.href);
 });
 
 nav?.querySelectorAll("a").forEach((link) => {
